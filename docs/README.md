@@ -187,5 +187,5 @@ def perimeter(a, b, c):
 ## Установка и использование
 Для использования функций просто скопируйте код в ваш Python-скрипт или импортируйте его в ваш проект.
 ## История изменений
-- [Added new file rectangle.py](https://github.com/smartiqaorg/geometric_lib/commit/044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6) 044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6
+- [Added new file rectangle.py](https://github.com/smartiqaorg/geometric_lib/commit/044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6) '''044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6'''
 - [The mistake has been corrected](https://github.com/smartiqaorg/geometric_lib/commit/9f55b7cb9e0f7817b805a77b73285ea8b84a7a84) 9f55b7cb9e0f7817b805a77b73285ea8b84a7a84
