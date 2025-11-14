@@ -1,191 +1,52 @@
-# Math formulas
-## Area
-- Circle: S = πR²
-- Rectangle: S = ab
-- Square: S = a²
+## Описание
+В данной лабораторной работе изучаются основы модульного тестирования в Python с использованием библиотеки unittest.
+Тестируются функции для расчёта площади и периметра (или аналогичных характеристик) различных геометрических фигур: прямоугольника, квадрата, треугольника и круга.
 
-## Perimeter
-- Circle: P = 2πR
-- Rectangle: P = 2a + 2b
-- Square: P = 4a
+## Структура проекта
+- lab4/
+  - rectangle.py          (Функции area(a, b), perimeter(a, b))
+  - circle.py             (Функции area(r), perimeter(r))
+  - square.py             (Функции area(a), perimeter(a))
+  - triangle.py           (Функции area(a, h), perimeter(a, b, c))
+  - rectangle_test.py     (Unit-тесты для rectangle.py)
+  - circle_test.py        (Unit-тесты для circle.py)
+  - square_test.py        (Unit-тесты для square.py)
+  - triangle_test.py      (Unit-тесты для triangle.py)
+  - Lab4_UnitTests_Report.pdf  (Отчет по лабораторной работе)
 
-# Геометрические Функции на Python
+## Установка
+1. Клонируйте репозиторий:
+   git clone <URL вашего репозитория>
+   cd Lab4_UnitTests
+2. Убедитесь, что установлен Python 3.8+
+3. Библиотека unittest входит в стандартную поставку Python, установка дополнительных пакетов не требуется
 
-## Общее описание решения
+## Запуск тестов
 
-Этот проект содержит функции для вычисления площади и периметра квадратов и кругов. Он предназначен для упрощения расчетов в геометрии, предоставляя удобные методы для вычисления основных характеристик этих фигур. Все функции принимают параметры в виде целых или вещественных чисел и возвращают соответствующие значения.
+Через командную строку:
+- python -m unittest rectangle_test.py
+- python -m unittest circle_test.py
+- python -m unittest square_test.py
+- python -m unittest triangle_test.py
 
-## Описание функций
-### 1. Площадь квадрата
+Или запустить все тесты сразу:
+- python -m unittest discover
 
-```
-def area(a)
-    '''
-    Площадь квадрата
+Через PyCharm Unit Test Runner:
+- Правый клик по файлу теста → Run 'Python tests in <file>'
+- Или нажать зелёный треугольник слева от имени класса тестов
 
-    Args:
-        a (int or float): сторона квадрата
+Вывод тестов при успешном выполнении:
+Ran X tests in Y seconds
+OK
 
-    Returns:
-        int or float: площадь квадрата
+## Содержание тестов
+Каждый тест проверяет функции:
+- area() — площадь фигуры
+- perimeter() — периметр фигуры
 
-    Examples:
-        >>> area(4)
-        16
-        >>> area(3.5)
-        12.25
-    '''
-    return a * a
-```
-### 2. Периметр квадрата
-```
-def perimeter(a):
-    '''
-    Периметр квадрата
-
-    Args:
-        a (int): сторона квадрата
-
-    Returns:
-        int or float: периметр квадрата
-
-    Examples:
-        >>> perimeter(5)
-        20
-        >>> perimeter(3.5)
-        14
-    '''
-    return 4 * a
-```
-### 3. Площадь круга
-```
-import math
-
-
-def area(r):
-    '''
-    Принимает на вход радиус и возвращает площадь круга
-
-    Args:
-        r (int or float): радиус круга
-
-    Returns:
-        int or float: площадь круга
-
-    Examples:
-        >>> area(7)
-        153.93804002589985
-        >>> area(2.5)
-        19.634954084936208
-    '''
-    return math.pi * r * r
-```
-### 4. Периметр круга
-```
-import math
-
-
-def perimeter(r):
-    '''
-    Принимает на вход радиус и возвращает периметр круга
-
-    Args:
-        r (int or float): радиус круга
-
-    Returns:
-        int or float: площадь круга
-
-    Examples:
-        >>> perimeter(6)
-        37.69911184307752
-        >>> perimeter(3.6)
-        22.61946710584651
-    '''
-    return 2 * math.pi * r
-```
-### 5. Площадь прямоугольника
-```
-def area(a, b):
-    '''
-    Принимает на вход стороны a и b, возвращает площадь прямоугольника
-
-    Args:
-        a, b (int or float): стороны прямоугольника
-
-    Returns:
-        int or float: площадь прямоугольника
-
-    Examples:
-        >>> area(3, 4)
-        12
-        >>> area(2.5, 4)
-        10
-    '''
-    return a * b
-```
-### 6. Периметр прямоугольника
-```
-def perimeter(a, b):
-    '''
-    Принимает на вход стороны а и b, возвращает периметр прямоугольнка
-
-    Args:
-        a, b (int or float): стороны прямоугольника
-
-    Returns:
-        int or float: периметр прямоугольника
-
-    Examples:
-        >>> perimeter(1, 7)
-        16
-        >>> perimeter(2.5, 7)
-        19
-    '''
-    return (a + b) * 2
-```
-### 7. Площадь треугольника
-```
-def area(a, h):
-    '''
-    Принимает на вход сторону а и высоту h, возвращает площадь треугольника
-
-    Args:
-        a, h (int or float): стороны и высота треугольника
-
-    Returns:
-        int or float: площадь треугольника
-
-    Examples:
-        >>> area(6, 7)
-        21
-        >>> area(2, 3)
-        3
-    '''
-    return a * h / 2
-```
-### 8. Периметр треугольника
-```
-def perimeter(a, b, c):
-    '''
-    Принимает на вход 3 стороны треугольника
-
-    Args:
-        a, b, c (int or float): стороны треугольника
-
-    Returns:
-        int or float: площадь треугольника
-
-    Examples:
-        >>> perimeter(3, 4, 5)
-        12
-        >>> perimeter(1.5, 2, 5)
-        8.5
-    '''
-    return a + b + c
-```
-
-## Установка и использование
-Для использования функций просто скопируйте код в ваш Python-скрипт или импортируйте его в ваш проект.
-## История изменений
-- [Added new file rectangle.py](https://github.com/smartiqaorg/geometric_lib/commit/044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6)    044ecc72ca9ad05842f6b6ea7ff390cd43e7cfc6    
-- [The mistake has been corrected](https://github.com/smartiqaorg/geometric_lib/commit/9f55b7cb9e0f7817b805a77b73285ea8b84a7a84) 9f55b7cb9e0f7817b805a77b73285ea8b84a7a84
+Покрыты следующие случаи:
+- нормальные значения (положительные числа)
+- граничные значения (0)
+- негативные значения (отрицательные числа)
+- для круга — проверка с использованием math.pi и assertAlmostEqual
