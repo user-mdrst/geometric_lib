@@ -1,0 +1,28 @@
+import unittest
+from rectangle import area, perimeter
+
+
+class RectangleTestCase(unittest.TestCase):
+    def test_area_normal(self):
+        self.assertEqual(area(5, 10), 50)
+
+    def test_area_zero(self):
+        self.assertEqual(area(5, 0), 0)
+
+    def test_area_square(self):
+        self.assertEqual(area(7, 7), 49)
+
+    def test_area_negative(self):
+        self.assertEqual(area(-5, 10), -50)
+
+    def test_perimeter_normal(self):
+        self.assertEqual(perimeter(5, 10), 30)
+
+    def test_perimeter_zero(self):
+        self.assertEqual(perimeter(5, 0), 10)
+
+    def test_perimeter_square(self):
+        self.assertEqual(perimeter(7, 7), 28)
+
+    def test_perimeter_negative(self):
+        self.assertEqual(perimeter(-5, 10), 10)
